@@ -1,0 +1,39 @@
+.text-center{
+	text-align: center;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.bg{
+	background-color: #6fcb9f;
+}
+
+.check{
+	border-style: solid;
+}
+
+.focal-point{
+	margin-top: 25%;
+	background-color: white;
+}
+
+#quote{
+	margin: 2% 1% 0 1%;
+	font-variant: small-caps;
+}
+
+#source{
+	margin-right: 2.5%;
+	margin-bottom: 1%;
+}
+
+#new-quote{
+	margin-right: 1%;
+}
+
+.social{
+	padding: 0, 10px, 1px, 10%;
+	border-radius: 50%;
+}

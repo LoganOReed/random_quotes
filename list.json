@@ -1,0 +1,14 @@
+var quotes={
+	"Dr. Seuss": "Don't cry because it's over, smile because it happened.",
+	"Marilyn Monroe": "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+	"Albert Einstein": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+	"Albert Camus": "Don’t walk in front of me… I may not follow. Don’t walk behind me… I may not lead. Walk beside me… just be my friend"
+}
+
+var colors=[
+	"#666547",
+	"#fb2e01",
+	"#6fcb9f",
+	"#ffe28a",
+	"#fffeb3"
+]
