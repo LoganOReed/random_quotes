@@ -38,6 +38,10 @@
 	margin-right: 1%;
 }
 
+#new-quote:focus{
+	color: white;
+}
+
 .social{
 	margin: 0 0 3% 2%;
 	border-radius: 15px;
