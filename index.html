@@ -8,23 +8,44 @@
 
 	<title>Quotes</title>
 
-	<link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/boilerplate/normalize.css">
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/boilerplate/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
 
 	<script type="text/javascript" src="assets/js/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var colors = ["#666547","#fb2e01","#6fcb9f","#ffe28a","#fffeb3", "#666547","#fb2e01","#6fcb9f","#ffe28a","#fffeb3"];
+			function randomColors(array){
+				var randNum = Math.floor(Math.random() * 10);
+				var str = array[randNum];
+				return str;
+			}
+			$("#new-quote").on("click", function(){
+				var rCol = randomColors(colors);
+				$(".changing-color").css("color", rCol);
+				$(".bg-color").css("background-color", rCol);
+			});
+		});
+	</script>
 </head>
-<body class="bg">
+<body class="bg-color">
 	<main class="container ">
 		<section class="row">
 			<div class="offset-by-two eight columns focal-point">
-				<p class="text-center" id="quote">“Don't cry because it's over, smile bed. Don't cry because it's over, smile because it happened. Don't cry because it's over, smile because it happened. Don't cry because it's over, smile because it happened.”</p>
-				<h5 class="text-right" id="source">- Dr. Seuss</h5>
-				<button class="button u-pull-right" id="new-quote">New Quote</button>
-				<a href="#" class="social button">One</a>
-				<a href="#" class="button social">Two</a>
+				<p class="text-center changing-color" id="quote">“Don't cry because it's over, smile because it happened.”</p>
+				<h5 class="text-right changing-color" id="source">- Dr. Seuss</h5>
+				<a href="#" class="button u-pull-right bg-color" id="new-quote">New Quote</a>
+				<nav class="social-nav">
+				<a href="#" class="social button bg-color">One</a>
+				<a href="#" class="button social bg-color">Two</a>
+				</nav>
 			</div>
+			<footer class="offset-by-two eight columns">
+				<p class="text-center footer-text">By Logan Reed</p>
+			</footer>
 		</section>
 	</main>
 </body>
