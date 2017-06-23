@@ -13,51 +13,58 @@
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
 
 	<script type="text/javascript" src="assets/js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			var quotes=[{ name: "Dr. Seuss", quote: "Don't cry because it's over, smile because it happened."}, 
-						{ name: "Marilyn Monroe", quote: "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best."},
-						{ name: "Albert Einstein", quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."},
-						{name: "Albert Camus", quote: "Don’t walk in front of me… I may not follow. Don’t walk behind me… I may not lead. Walk beside me. Just be my friend"}];
+			var quotes = [{"name": "Dr. Suess", "quote": "My name is Dr. Suess."},
+			 	{"name": "Marilyn Monroe", "quote": "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best."},
+			 	{"name": "Albert Einstein", "quote": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."},
+			 	{"name": "Albert Camus", "quote": "Don’t walk in front of me… I may not follow. Don’t walk behind me… I may not lead. Walk beside me. Just be my friend"}];
+	
+			var colors = ["rgb(102, 101, 71)",
+				"rgb(251, 46, 1)",
+				"rgb(111, 203, 159)",
+				"rgb(255, 226, 138)"
+				];
 
-			var colors = ["#666547","#fb2e01","#6fcb9f","#ffe28a","#fffeb3", "#666547","#fb2e01","#6fcb9f","#ffe28a","#fffeb3"];
-			
-			//creates a random number from 0 to length-1
+			//creates a random number from 1 to length-1
 			function randomNum(length){
 				var range = length/10;
 				var randNum = Math.floor(Math.random() * 10 * range);
+				if(randNum === 0)
+					randNum++;
 				return randNum;
 			}
 
 			//choses a random Value from an array
-			function randomValue(array){
-				var randNum = randomNum(array.length);
-				var str = array[randNum];
+			function randomColor(array){
+				var num = randomNum(array.length);
+				if($(".changing-color").css("color") == array[num]){
+					num++;
+					if(num >= array.length){
+						num = Math.abs(num - array.length);
+					}
+				}
+				var str = array[num]
+				return str;
+			}
+			
+			//choses a random Value from an array
+			function randomQuote(array){
+				var num = randomNum(array.length);
+				if($("#quote").html() == array[num].quote){
+					num++;
+					if(num >= array.length){
+						num = Math.abs(num - array.length);
+					}
+				}
+				var str = array[num]
 				return str;
 			}
 
-			
 			$("#new-quote").on("click", function(){
-				var cCol;
-				var cQuote;
-				var rCol = randomValue(colors);
-				var rQuote = randomValue(quotes);
-
-				if(!cCol || !cQuote){
-					cCol = rCol;
-					cQuote = rQuote;
-				}
-
-				while(rCol == cCol){
-					rCol = randomValue(colors);
-				}
-
-				while(rQuote == cQuote){
-					rQuote = randomValue(quotes);
-				}
-
+				var rCol = randomColor(colors);
+				var rQuote = randomQuote(quotes);
 
 				$(".changing-color").css("color", rCol);
 				$(".bg-color").css("background-color", rCol);
