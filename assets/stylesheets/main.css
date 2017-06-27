@@ -7,11 +7,11 @@
 }
 
 .bg-color{
-	background-color: #6fcb9f;
+	background-color: rgb(102, 101, 71);
 }
 
 .changing-color{
-	color: #6fcb9f;
+	color: rgb(102, 101, 71);
 }
 
 .check{
@@ -48,7 +48,6 @@
 }
 
 .button{
-	background-color: #6fcb9f;
 	color: white;
 	border: 1px solid white;
 }
